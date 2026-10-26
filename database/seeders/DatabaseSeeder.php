@@ -17,12 +17,13 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // Create a test user for login
-        User::factory()->create([
-            'name' => 'Admin User',
-            'email' => 'admin@studentgrading.com',
-            'password' => Hash::make('password'),
-        ]);
-
+       User::updateOrCreate(
+            ['email' => 'admin@gmail.com'],
+            [
+                'name' => 'Admin User',
+                'password' => Hash::make('password123'),
+            ]
+        );
         // Seed sample products for the hardware store
         $this->call(StudentSeeder::class);
     }
