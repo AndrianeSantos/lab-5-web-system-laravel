@@ -36,7 +36,7 @@ class Student extends Model
             return 'N/A';
         }
         return match (true) {
-            $this->grade >= 97 => 'A+',
+            $this->grade >= 97 => 'A+', 
             $this->grade >= 93 => 'A',
             $this->grade >= 90 => 'A-',
             $this->grade >= 87 => 'B+',
